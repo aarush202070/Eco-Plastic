@@ -5,10 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoPlastics: Your Sustainable Choice!</title>
     <link rel="stylesheet" href="style.css">
-    <style src="main.js'></style>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #00b894, #a29bfe);
+            color: #fff;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            align-items: center;
+            background-color: #2d3436;
+        }
+
+        .header-content {
+            text-align: center;
+            color: #fff;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-list li {
+            margin: 0 15px;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .hero {
+            padding: 20px;
+            text-align: center;
+            background: rgba(0, 128, 0, 0.7);
+            border-radius: 10px;
+            height: 250px; /* Decreased height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h2 {
+            margin: 0;
+        }
+
+        #about, #products, #contact {
+            padding: 30px 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 20px;
+        }
+
+        .product {
+            background-color: #2d3436;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .product h3 {
+            margin: 10px 0;
+        }
+
+        .button {
+            background-color: #00b894;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        footer {
+            background-color: #2d3436;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .contact-content {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <h1>Welcome to EcoPlastics</h1>
         <p>Your Sustainable Choice!</p>
@@ -19,21 +135,18 @@
                 <li><a href="#products">Products</a></li>
                 <li><a href="#contact">Contact Us</a></li>
                 <li><a href="#learn-more">Learn More</a></li>
-            </ul>
-        </nav>
+            
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero" style="max-height: 70px;">
         <h2>Trash the Old Ways, Embrace the New!</h2>
-        <button onclick="location.href='#products'">Shop Now</button>
     </section>
 
     <!-- About Us Section -->
-    <section id="about">
-        <h2>About Us</h2>
+    <section id="about" style="max-height: 150px; top: 100px; ">
+        <h2 style="padding-top:-70px ;">About Us</h2>
         <div class="about-content">
-            <img src="images/about-us.jpg" alt="Eco-friendly Products" class="about-image">
             <p>At EcoPlastics, we are dedicated to providing biodegradable alternatives to conventional plastics. Our products decompose naturally, helping to reduce pollution and protect our environment. Join us in making a sustainable choice for a greener future.</p>
             <a href="#learn-more" class="button">Learn More About Biodegradable Plastics</a>
         </div>
@@ -43,35 +156,64 @@
     <section id="products" class="featured-products">
         <h2>Our Products</h2>
         <div class="product-list">
-            <!-- Product 1 -->
+            <!-- Adding 10 products -->
             <div class="product">
-                <img src="images/shopping-bag.jpg" alt="Biodegradable Shopping Bag">
                 <h3>Biodegradable Shopping Bag</h3>
                 <p>Durable and eco-friendly shopping bags that decompose naturally.</p>
                 <button class="view-details" data-product="Biodegradable Shopping Bag">View Details</button>
             </div>
-            <!-- Product 2 -->
             <div class="product">
-                <img src="images/food-wrapper.jpg" alt="Compostable Food Wrapper">
                 <h3>Compostable Food Wrapper</h3>
                 <p>Safe and biodegradable wrapping for food items.</p>
                 <button class="view-details" data-product="Compostable Food Wrapper">View Details</button>
             </div>
-            <!-- Product 3 -->
             <div class="product">
-                <img src="images/straw.jpg" alt="Biodegradable Straws">
                 <h3>Biodegradable Straws</h3>
                 <p>Eco-friendly straws that keep drinks sustainable.</p>
                 <button class="view-details" data-product="Biodegradable Straws">View Details</button>
             </div>
-            <!-- Add more products -->
+            <div class="product">
+                <h3>Eco-Friendly Water Bottle</h3>
+                <p>Reusable water bottle to reduce plastic waste.</p>
+                <button class="view-details" data-product="Eco-Friendly Water Bottle">View Details</button>
+            </div>
+            <div class="product">
+                <h3>Compostable Plates</h3>
+                <p>Compostable plates that are safe and sustainable.</p>
+                <button class="view-details" data-product="Compostable Plates">View Details</button>
+            </div>
+            <div class="product">
+                <h3>Reusable Tote Bag</h3>
+                <p>Eco-friendly tote bag for daily use.</p>
+                <button class="view-details" data-product="Reusable Tote Bag">View Details</button>
+            </div>
+            <div class="product">
+                <h3>Biodegradable Cutlery</h3>
+                <p>Compostable and biodegradable cutlery.</p>
+                <button class="view-details" data-product="Biodegradable Cutlery">View Details</button>
+            </div>
+            <div class="product">
+                <h3>Eco-friendly Coffee Cups</h3>
+                <p>Compostable coffee cups to replace plastic ones.</p>
+                <button class="view-details" data-product="Eco-friendly Coffee Cups">View Details</button>
+            </div>
+            <div class="product">
+                <h3>Biodegradable Packaging</h3>
+                <p>Eco-friendly packaging options for businesses.</p>
+                <button class="view-details" data-product="Biodegradable Packaging">View Details</button>
+            </div>
+            <div class="product">
+                <h3>Compostable Forks</h3>
+                <p>Compostable forks for sustainable dining.</p>
+                <button class="view-details" data-product="Compostable Forks">View Details</button>
+            </div>
         </div>
     </section>
 
     <!-- Contact Us Section -->
-    <section id="contact">
+    <section id="contact" style="max-height: 450px;">
         <h2>Contact Us</h2>
-        <div class="contact-content">
+        <div>
             <p>We would love to hear from you! Reach out to us for any queries, suggestions, or feedback.</p>
             <form>
                 <label for="name">Name:</label>
@@ -83,39 +225,9 @@
                 <button type="submit" class="button">Send Message</button>
             </form>
         </div>
-        <div class="contact-info">
-            <p><strong>Address:</strong> 123 Green Lane, EcoCity</p>
-            <p><strong>Email:</strong> support@ecoplastics.com</p>
-            <p><strong>Phone:</strong> +1 (234) 567-890</p>
-        </div>
     </section>
-
-    <!-- Product Details Popup -->
-    <div id="product-popup" class="popup hidden">
-        <div class="popup-content">
-            <span class="close-popup">&times;</span>
-            <h2 id="popup-title">Product Title</h2>
-            <p id="popup-description">Details about the product will appear here. Stay tuned - Coming Soon!</p>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#products">Products</a>
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact Us</a>
-            <a href="#learn-more">Learn More</a>
-        </div>
-        <div class="social-media">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter</a>
-        </div>
+    <footer style="max-height: 100px;">
         <p>&copy; 2025 EcoPlastics. All rights reserved.</p>
     </footer>
-
-    <script src="scripts.js"></script>
 </body>
 </html>
