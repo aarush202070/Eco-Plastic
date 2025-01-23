@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoPlastics: Your Sustainable Choice!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Welcome to EcoPlastics</h1>
+        <p>Your Sustainable Choice!</p>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#learn-more">Learn More</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>Trash the Old Ways, Embrace the New!</h2>
+        <button onclick="location.href='#products'">Shop Now</button>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Biodegradable plastics offer an eco-friendly alternative to conventional plastics. These products decompose naturally, reducing pollution and protecting our planet.</p>
+        <a href="#learn-more">Learn More About Biodegradable Plastics</a>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="products" class="featured-products">
+        <h2>Our Products</h2>
+        <div class="product-list">
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="images/shopping-bag.jpg" alt="Biodegradable Shopping Bag">
+                <h3>Biodegradable Shopping Bag</h3>
+                <p>Durable and eco-friendly shopping bags that decompose naturally.</p>
+                <button onclick="location.href='product-details.html?product=shopping-bag'">View Details</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="images/food-wrapper.jpg" alt="Compostable Food Wrapper">
+                <h3>Compostable Food Wrapper</h3>
+                <p>Safe and biodegradable wrapping for food items.</p>
+                <button onclick="location.href='product-details.html?product=food-wrapper'">View Details</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="images/straw.jpg" alt="Biodegradable Straws">
+                <h3>Biodegradable Straws</h3>
+                <p>Eco-friendly straws that keep drinks sustainable.</p>
+                <button onclick="location.href='product-details.html?product=straws'">View Details</button>
+            </div>
+            <!-- Add more products -->
+            <!-- Product 4 -->
+            <div class="product">
+                <img src="images/plates.jpg" alt="Disposable Plates and Bowls">
+                <h3>Disposable Plates and Bowls</h3>
+                <p>Perfect for parties and picnics, and completely compostable.</p>
+                <button onclick="location.href='product-details.html?product=plates'">View Details</button>
+            </div>
+            <!-- Product 5 -->
+            <div class="product">
+                <img src="images/cutlery.jpg" alt="Biodegradable Cutlery Set">
+                <h3>Biodegradable Cutlery Set</h3>
+                <p>Sustainable forks, spoons, and knives for daily use.</p>
+                <button onclick="location.href='product-details.html?product=cutlery'">View Details</button>
+            </div>
+            <!-- Product 6 -->
+            <div class="product">
+                <img src="images/trash-bags.jpg" alt="Compostable Trash Bags">
+                <h3>Compostable Trash Bags</h3>
+                <p>Strong and eco-friendly trash bags for everyday use.</p>
+                <button onclick="location.href='product-details.html?product=trash-bags'">View Details</button>
+            </div>
+            <!-- Product 7 -->
+            <div class="product">
+                <img src="images/cups.jpg" alt="Biodegradable Cups">
+                <h3>Biodegradable Cups</h3>
+                <p>Reusable and compostable cups for beverages.</p>
+                <button onclick="location.href='product-details.html?product=cups'">View Details</button>
+            </div>
+            <!-- Add more products up to 15 -->
+            <!-- Product 8 to 15 (skipping for brevity) -->
+        </div>
+    </section>
+
+    <!-- Product Details Page (Example for one product) -->
+    <div id="product-details" style="display: none;">
+        <h2>Product Name</h2>
+        <img src="product-image.jpg" alt="Product">
+        <p>Detailed description of the product.</p>
+        <p>Price: $XX.XX</p>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1">
+        <button>Add to Cart</button>
+        <button id="buy-now">Buy Now</button>
+    </div>
+
+    <!-- Buy Flow Script -->
+    <script>
+        document.getElementById('buy-now').addEventListener('click', function() {
+            document.body.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+            const steps = ['Buying', 'Shipping', 'Ordered', 'Placed'];
+            let stepIndex = 0;
+
+            const interval = setInterval(() => {
+                if (stepIndex < steps.length) {
+                    alert(steps[stepIndex]);
+                    stepIndex++;
+                } else {
+                    clearInterval(interval);
+                    alert('Thank you for your order! Your eco-friendly products are on their way!');
+                    document.body.style.backgroundColor = "";
+                }
+            }, 1000);
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact Us</a>
+            <a href="#learn-more">Learn More</a>
+        </div>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+        <p>&copy; 2025 EcoPlastics. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
