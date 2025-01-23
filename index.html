@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoPlastics: Your Sustainable Choice!</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header -->
@@ -32,8 +31,11 @@
     <!-- About Us Section -->
     <section id="about">
         <h2>About Us</h2>
-        <p>Biodegradable plastics offer an eco-friendly alternative to conventional plastics. These products decompose naturally, reducing pollution and protecting our planet.</p>
-        <a href="#learn-more">Learn More About Biodegradable Plastics</a>
+        <div class="about-content">
+            <img src="images/about-us.jpg" alt="Eco-friendly Products" class="about-image">
+            <p>At EcoPlastics, we are dedicated to providing biodegradable alternatives to conventional plastics. Our products decompose naturally, helping to reduce pollution and protect our environment. Join us in making a sustainable choice for a greener future.</p>
+            <a href="#learn-more" class="button">Learn More About Biodegradable Plastics</a>
+        </div>
     </section>
 
     <!-- Featured Products Section -->
@@ -45,87 +47,56 @@
                 <img src="images/shopping-bag.jpg" alt="Biodegradable Shopping Bag">
                 <h3>Biodegradable Shopping Bag</h3>
                 <p>Durable and eco-friendly shopping bags that decompose naturally.</p>
-                <button onclick="location.href='product-details.html?product=shopping-bag'">View Details</button>
+                <button class="view-details" data-product="Biodegradable Shopping Bag">View Details</button>
             </div>
             <!-- Product 2 -->
             <div class="product">
                 <img src="images/food-wrapper.jpg" alt="Compostable Food Wrapper">
                 <h3>Compostable Food Wrapper</h3>
                 <p>Safe and biodegradable wrapping for food items.</p>
-                <button onclick="location.href='product-details.html?product=food-wrapper'">View Details</button>
+                <button class="view-details" data-product="Compostable Food Wrapper">View Details</button>
             </div>
             <!-- Product 3 -->
             <div class="product">
                 <img src="images/straw.jpg" alt="Biodegradable Straws">
                 <h3>Biodegradable Straws</h3>
                 <p>Eco-friendly straws that keep drinks sustainable.</p>
-                <button onclick="location.href='product-details.html?product=straws'">View Details</button>
+                <button class="view-details" data-product="Biodegradable Straws">View Details</button>
             </div>
             <!-- Add more products -->
-            <!-- Product 4 -->
-            <div class="product">
-                <img src="images/plates.jpg" alt="Disposable Plates and Bowls">
-                <h3>Disposable Plates and Bowls</h3>
-                <p>Perfect for parties and picnics, and completely compostable.</p>
-                <button onclick="location.href='product-details.html?product=plates'">View Details</button>
-            </div>
-            <!-- Product 5 -->
-            <div class="product">
-                <img src="images/cutlery.jpg" alt="Biodegradable Cutlery Set">
-                <h3>Biodegradable Cutlery Set</h3>
-                <p>Sustainable forks, spoons, and knives for daily use.</p>
-                <button onclick="location.href='product-details.html?product=cutlery'">View Details</button>
-            </div>
-            <!-- Product 6 -->
-            <div class="product">
-                <img src="images/trash-bags.jpg" alt="Compostable Trash Bags">
-                <h3>Compostable Trash Bags</h3>
-                <p>Strong and eco-friendly trash bags for everyday use.</p>
-                <button onclick="location.href='product-details.html?product=trash-bags'">View Details</button>
-            </div>
-            <!-- Product 7 -->
-            <div class="product">
-                <img src="images/cups.jpg" alt="Biodegradable Cups">
-                <h3>Biodegradable Cups</h3>
-                <p>Reusable and compostable cups for beverages.</p>
-                <button onclick="location.href='product-details.html?product=cups'">View Details</button>
-            </div>
-            <!-- Add more products up to 15 -->
-            <!-- Product 8 to 15 (skipping for brevity) -->
         </div>
     </section>
 
-    <!-- Product Details Page (Example for one product) -->
-    <div id="product-details" style="display: none;">
-        <h2>Product Name</h2>
-        <img src="product-image.jpg" alt="Product">
-        <p>Detailed description of the product.</p>
-        <p>Price: $XX.XX</p>
-        <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" value="1" min="1">
-        <button>Add to Cart</button>
-        <button id="buy-now">Buy Now</button>
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-content">
+            <p>We would love to hear from you! Reach out to us for any queries, suggestions, or feedback.</p>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your Message"></textarea>
+                <button type="submit" class="button">Send Message</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <p><strong>Address:</strong> 123 Green Lane, EcoCity</p>
+            <p><strong>Email:</strong> support@ecoplastics.com</p>
+            <p><strong>Phone:</strong> +1 (234) 567-890</p>
+        </div>
+    </section>
+
+    <!-- Product Details Popup -->
+    <div id="product-popup" class="popup hidden">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2 id="popup-title">Product Title</h2>
+            <p id="popup-description">Details about the product will appear here. Stay tuned - Coming Soon!</p>
+        </div>
     </div>
-
-    <!-- Buy Flow Script -->
-    <script>
-        document.getElementById('buy-now').addEventListener('click', function() {
-            document.body.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-            const steps = ['Buying', 'Shipping', 'Ordered', 'Placed'];
-            let stepIndex = 0;
-
-            const interval = setInterval(() => {
-                if (stepIndex < steps.length) {
-                    alert(steps[stepIndex]);
-                    stepIndex++;
-                } else {
-                    clearInterval(interval);
-                    alert('Thank you for your order! Your eco-friendly products are on their way!');
-                    document.body.style.backgroundColor = "";
-                }
-            }, 1000);
-        });
-    </script>
 
     <!-- Footer -->
     <footer>
